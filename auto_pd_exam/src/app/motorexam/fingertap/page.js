@@ -3,6 +3,7 @@ import WebcamStreamCapture from '../../components/WebcamStreamCapture';
 import NavBar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react';
 
 export default function MotorExam() {
     const searchParams = useSearchParams()
