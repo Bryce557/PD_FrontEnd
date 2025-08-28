@@ -11,13 +11,15 @@ export default function MotorExam() {
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen gap-16 font-[family-name:var(--font-geist-sans)]">
             <NavBar></NavBar>
             <div className='mt-20'>
-                <WebcamStreamCapture 
-                    task = {'Finger tapping evaluation'}
-                    message= {'Tap your pointer finger and thumb together for 10 seconds.'}
-                    nextPath = {'handmovement?whichHand=' + whichHand}
-                    hand = {whichHand}
-                    isLast = {false}
-                />
+                <Suspense>   
+                    <WebcamStreamCapture 
+                        task = {'Finger tapping evaluation'}
+                        message= {'Tap your pointer finger and thumb together for 10 seconds.'}
+                        nextPath = {'handmovement?whichHand=' + whichHand}
+                        hand = {whichHand}
+                        isLast = {false}
+                    />
+                </Suspense> 
             </div>
             <Footer></Footer>
         </div>

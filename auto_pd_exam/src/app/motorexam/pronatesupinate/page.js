@@ -17,13 +17,15 @@ export default function MotorExam() {
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen gap-16 font-[family-name:var(--font-geist-sans)]">
             <NavBar></NavBar>
             <div className='mt-20'>
-                <WebcamStreamCapture 
-                    task = {'Pronation/Supination evaluation'}
-                    message = {'Continously rotate palm up and down for 10 seconds.'}
-                    nextPath = {path}
-                    hand = {whichHand}
-                    isLast = {finished}
-                />
+                <Suspense>
+                    <WebcamStreamCapture 
+                        task = {'Pronation/Supination evaluation'}
+                        message = {'Continously rotate palm up and down for 10 seconds.'}
+                        nextPath = {path}
+                        hand = {whichHand}
+                        isLast = {finished}
+                    />
+                </Suspense>
             </div>
             <Footer></Footer>
         </div>
