@@ -82,7 +82,7 @@ export default function SignIn() {
                 </div>
                 <div className="flex w-full justify-center text-sm">
                   <Link href="/signup" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                      Don't have an account?
+                      Don&apos;t have an account?
                   </Link>
                 </div>
               </form>
