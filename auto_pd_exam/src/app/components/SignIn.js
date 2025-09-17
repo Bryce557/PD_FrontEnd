@@ -3,6 +3,7 @@ import { useActionState } from 'react';
 import { authenticate} from '../lib/actions';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function SignIn() {
     const searchParams = useSearchParams();
@@ -15,7 +16,7 @@ export default function SignIn() {
       <>
           <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-              <img
+              <Image
                 alt="Your Company"
                 src="/logo.png"
                 className="mx-auto h-40 w-auto"

@@ -1,7 +1,8 @@
 
 'use client'
 import { addPatient } from '../lib/data';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function SignUp() {
     const router = useRouter();
@@ -31,7 +32,7 @@ export default function SignUp() {
       <>
           <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-              <img
+              <Image
                 alt="Your Company"
                 src="/logo.png"
                 className="mx-auto h-40 w-auto"
