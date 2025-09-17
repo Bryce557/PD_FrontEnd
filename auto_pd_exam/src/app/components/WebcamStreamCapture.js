@@ -10,6 +10,7 @@ import {
 import { handleDownload, drawHandLandmarks, drawFaceLandmarks, videoConstraints } from "../util/util";
 import useRecorder from "../hooks/useRecorder"
 import Link from 'next/link';
+import {uploadVideo, getID} from '../lib/data';
 
 
 export default function WebcamStreamCapture({task, message, nextPath, hand, isLast}) {
@@ -291,7 +292,11 @@ export default function WebcamStreamCapture({task, message, nextPath, hand, isLa
             <Link
               href={nextPath}
               onNavigate={(e) => {
-                handleDownload(recordedChunks, task, hand);
+                const date = new Date();
+                const blob = handleDownload(recordedChunks, task, hand);
+                const path = date.getMonth() + '-' + date.getDate() + '-' + date.getFullYear() + 
+                             '/' + task.replaceAll(' ', '_') + '_' + hand + '.mp4';
+                uploadVideo(blob, path);
               }}
               className="rounded-lg bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-500/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >

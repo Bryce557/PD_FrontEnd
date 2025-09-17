@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 export default function WelcomePage() {
+  console.log('welcome');
   return (
     <div className="fade-in">
       <div className="relative isolate px-6 pt-10 lg:px-8">

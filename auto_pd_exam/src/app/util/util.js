@@ -27,8 +27,10 @@ export const handleDownload = (recordedChunks, task, hand) => {
       a.download = `${task.replaceAll(" ", "_") + "_" + hand}.mp4`
       a.click();
       window.URL.revokeObjectURL(url);
+      console.log(blob);
+      return blob;
     }
-    return([])
+    return null;
   }
   
 export function drawHandLandmarks(ctx, landmarks) {
