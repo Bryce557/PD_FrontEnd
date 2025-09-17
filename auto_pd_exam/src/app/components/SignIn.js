@@ -17,6 +17,8 @@ export default function SignIn() {
           <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
               <Image
+                width={3333} 
+                height={3333}
                 alt="Your Company"
                 src="/logo.png"
                 className="mx-auto h-40 w-auto"
