@@ -40,6 +40,7 @@ export async function getID() {
 export async function uploadVideo(video, path) {
     try {   
         const userId = await getID();
+        console.log('In uploadVideo -- userId: ', userId);
         const supabase = createClient('https://xkrjlpnwdbknwwjvwpuj.supabase.co', key);
         const { data, error } = await supabase
             .storage
