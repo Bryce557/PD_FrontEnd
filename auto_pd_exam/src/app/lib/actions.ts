@@ -7,8 +7,8 @@ export async function authenticate(
     prevState: string | undefined,
     formData: FormData,
 ) {
-    console.log('In actions.ts');
     try {
+        console.log('In actions.ts -- Form data: ', formData);
         await signIn('credentials', formData);
     } catch (error) {
         if (error instanceof AuthError) {

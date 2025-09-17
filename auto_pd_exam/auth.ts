@@ -11,6 +11,7 @@ const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 async function getPatient(email: string): Promise<Patient | undefined> {
     try {
         const patient = await sql<Patient[]>`SELECT * FROM patients WHERE email = ${email}`;
+        console.log('In patient: ', patient[0]);
         return patient[0];
     } catch (error) {
         console.error('Failed to fetch user:', error);
@@ -32,11 +33,11 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
                     const patient = await getPatient(email);
                     if (!patient) return null;
                     
-                    const passwordsMatch = password === patient.password;
+                    const passwordsMatch = await bcrypt.compare(password, patient.password);
     
                     if (passwordsMatch) return patient;
                 }
-                alert('Invalid credentails');
+                console.log('Invalid credentials');
                 return null;
             },
         }),
