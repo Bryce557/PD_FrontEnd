@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function SignIn() {
     const searchParams = useSearchParams();
-    const callbackUrl = searchParams.get('callbackUrl') || '/motorexam/fingertap';
+    const callbackUrl = searchParams.get('callbackUrl') || '/motorexam/fingertap?whichHand=right';
     const [errorMessage, formAction, isPending] = useActionState(
       authenticate, 
       undefined,
